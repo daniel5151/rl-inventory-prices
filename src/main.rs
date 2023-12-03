@@ -147,6 +147,7 @@ impl SimpleInventoryEntry {
 
     fn to_insider_gg_query(&self, with_quality: bool) -> String {
         let slot = match self.slot {
+            inventory_json::Slot::Unknown => unreachable!(),
             inventory_json::Slot::AnimatedDecal => "decals",
             inventory_json::Slot::Antenna => "antennas",
             inventory_json::Slot::AvatarBorder => "avatar_borders",

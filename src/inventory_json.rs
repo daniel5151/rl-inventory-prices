@@ -39,6 +39,8 @@ pub enum Slot {
     Trail,
     #[serde(rename = "Wheels")]
     Wheels,
+    #[serde(rename = "")]
+    Unknown,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -57,7 +59,7 @@ pub enum Paint {
     Grey,
     #[serde(rename = "Lime")]
     Lime,
-    #[serde(rename = "none")]
+    #[serde(rename = "none", alias = "")]
     None,
     #[serde(rename = "Orange")]
     Orange,
@@ -97,7 +99,7 @@ pub enum Certification {
     LongGoals,
     #[serde(rename = "MVPs")]
     MVPs,
-    #[serde(rename = "none")]
+    #[serde(rename = "none", alias = "")]
     None,
     #[serde(rename = "Saves")]
     Saves,
@@ -111,7 +113,7 @@ pub enum Certification {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum Quality {
-    #[serde(rename = "")]
+    #[serde(rename = "", alias = "unknown")]
     None,
     #[serde(rename = "Black market")]
     BlackMarket,
@@ -135,7 +137,7 @@ pub enum Quality {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum SpecialEdition {
-    #[serde(rename = "none")]
+    #[serde(rename = "none", alias = "")]
     None,
     #[serde(rename = "Edition_Holographic")]
     Holographic,
@@ -157,7 +159,7 @@ pub enum Tradeable {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct InventoryEntry {
-    pub product_id: usize,
+    pub product_id: isize,
     pub name: String,
     pub slot: Slot,
     pub paint: Paint,
