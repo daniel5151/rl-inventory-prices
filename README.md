@@ -1,3 +1,5 @@
+## Dec 5th 2023 - RIP rocket League trading 🪦
+
 # rl-inventory-prices
 
 A quick-and-dirty script that iterates over every item in a user's Rocket League
